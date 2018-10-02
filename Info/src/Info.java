@@ -11,6 +11,8 @@ public class Info {
 		System.out.println("My favorite book: \"" + favBook + "\"");
 		System.out.println("My favorite movie is \"" + favMovie + ".\"");
 		
+		
+		
 
 	}
 
