@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Distance {
@@ -14,7 +15,7 @@ public class Distance {
 		float distance_y;
 		float distance_sum;
 		float distance_sqr;
-		float cost;
+		double cost;
 
 		Scanner scan = new Scanner(System.in);
 
@@ -35,8 +36,12 @@ public class Distance {
 		distance_sum = distance_x + distance_y;
 		distance_sqr = (float) Math.sqrt(distance_sum);
 		cost = distance_sqr * 0.43f;
+		
+		//NumberFormat fmt = NumberFormat.getCurrencyInstance();
 
 		System.out.printf("Distance between the points is: %.3f\n", distance_sqr);
+		//System.out.println("The travel cost is: " + fmt.format(cost));
+		
 		System.out.printf("The travel cost is: $%.3f", cost);
 
 		scan.close();
