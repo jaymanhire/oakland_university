@@ -38,6 +38,11 @@ public class GradeReport {
 		}
 		scan.close();
 
+		int num1 = 3;
+		int num2 = 76;
+		int greater = (num1 > num2) ? num1 + 1000 : num1 * 2;
+		System.out.println(greater);
+
 	}
 
 }
