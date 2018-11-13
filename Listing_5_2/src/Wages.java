@@ -24,7 +24,7 @@ class Wages {
 		}
 		NumberFormat numFmt = NumberFormat.getCurrencyInstance();
 		System.out.println("Gross Pay: " + numFmt.format(pay));
-		
+
 		scan.close();
 
 	}
