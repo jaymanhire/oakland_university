@@ -28,7 +28,7 @@ public class Comparison {
 		System.out.println("Enter integer 3 of 3: ");
 		int3 = scan.nextLine();
 
-		Compare3.largest(int1, int2, int3);
+		Compare3.largestInt(int1, int2, int3);
 		
 		
 		
