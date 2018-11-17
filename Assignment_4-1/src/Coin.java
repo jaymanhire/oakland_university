@@ -1,39 +1,51 @@
-import java.util.Scanner;
 
 public class Coin implements Lockable {
 
-	private static int key;
-	private static int lock;
-	private static int unlock;
+	private int key;
+	//private int lock;
+	//private int unlock;
+	private int locked;
 
-	public static void main(String[] args) {
+	final int HEADS = 0;
+	final int TAILS = 1;
+	//int locked = 1;
 
-		System.out.println("Enter an integer to set key and lock: ");
-		Scanner scan1 = new Scanner(System.in);
+	private int face;
 
-		Coin coin1 = new Coin();
-		key = scan1.nextInt();
-		coin1.setKey(key);
-		coin1.lock(key);
-
-		System.out.println("Enter key to unlock: ");
-		if (key == scan1.nextInt()) {
-			coin1.unlock(key);
-		} else {
-			System.out.println("Incorrect....");
-			coin1.lock(key);
-		}
-
+	public Coin() {
+		flip();
 	}
+
+	public void flip() {
+		face = (int) (Math.random() * 2);
+	}
+
+	// returns true if HEADS
+	public boolean isHeads() {
+		return (face == HEADS);
+	}
+
+	public String toString() {
+		String faceName;
+
+		if (face == HEADS) {
+			faceName = "Heads";
+		} else {
+			faceName = "Tails";
+		}
+		return faceName;
+	}
+	
 
 	@Override
 	public void setKey(int key) {
-		Coin.key = key;
+		this.key = key;
 	}
 
 	@Override
-	public void lock(int key) {
+	public int lock(int lock) {
 		System.out.println("Locked.");
+		return lock;
 	}
 
 	@Override
@@ -42,7 +54,10 @@ public class Coin implements Lockable {
 	}
 
 	@Override
+	// returns true if HEADS
 	public boolean locked() {
-		return (key == lock);
+		return (locked == 0);
 	}
+	
+		
 }
