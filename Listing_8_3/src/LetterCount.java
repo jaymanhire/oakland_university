@@ -18,7 +18,7 @@ public class LetterCount {
 
 		System.out.println("Enter a sentence: ");
 		String line = scan.nextLine();
-
+ 
 		// Count the number of each letter occurrence
 		for (int ch = 0; ch < line.length(); ch++) {
 			current = line.charAt(ch);
