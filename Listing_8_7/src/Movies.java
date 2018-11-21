@@ -21,6 +21,6 @@ public class Movies {
 
 		System.out.println(movies);
 
-	}
+	} 
 
 }
