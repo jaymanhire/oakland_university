@@ -22,12 +22,12 @@ public class ShoppingCart {
 		if (count == collection.length)
 			increaseSize();
 		collection[count] = new Item(name,price,quantity);
-		totalCost += cost;
+		totalCost += price;
 		count++;
 	}
 
 	// -----------------------------------------------------------------
-	// Returns a report describing the DVD collection.
+	// Returns a report describing the Cart items.
 	// -----------------------------------------------------------------
 	public String toString() {
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
@@ -36,9 +36,9 @@ public class ShoppingCart {
 		report += "Number of DVDs: " + count + "\n";
 		report += "Total cost: " + fmt.format(totalCost) + "\n";
 		report += "Average cost: " + fmt.format(totalCost / count);
-		report += "\n\nDVD List:\n\n";
-		for (int dvd = 0; dvd < count; dvd++)
-			report += collection[dvd].toString() + "\n";
+		report += "\n\nItem List:\n\n";
+		for (int item = 0; item < count; item++)
+			report += collection[item].toString() + "\n";
 		return report;
 	}
 
@@ -48,8 +48,8 @@ public class ShoppingCart {
 	// -----------------------------------------------------------------
 	private void increaseSize() {
 		Item[] temp = new Item[collection.length * 2];
-		for (int dvd = 0; dvd < collection.length; dvd++)
-			temp[dvd] = collection[dvd];
+		for (int item = 0; item < collection.length; item++)
+			temp[item] = collection[item];
 		collection = temp;
 	}
 }
