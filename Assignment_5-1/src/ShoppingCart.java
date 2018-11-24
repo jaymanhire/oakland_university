@@ -33,10 +33,10 @@ public class ShoppingCart {
 	public String toString() {
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
 		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-		report += "My DVD Collection\n\n";
-		report += "Number of DVDs: " + count + "\n";
+		report += "Shopping Cart\n\n";
+		report += "Number of items: " + count + "\n";
 		report += "Total cost: " + fmt.format(totalCost) + "\n";
-		report += "Average cost: " + fmt.format(totalCost / count);
+		report += "Subtotal: " + fmt.format(totalCost * count);
 		report += "\n\nItem List:\n\n";
 		for (int item = 0; item < count; item++)
 			report += capacity[item].toString() + "\n"; 
