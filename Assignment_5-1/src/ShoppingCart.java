@@ -2,7 +2,8 @@
 import java.text.NumberFormat;
 
 public class ShoppingCart {
-	private Item[] collection;
+	
+	private Item[] capacity;
 	private int count;
 	private double totalCost;
 
@@ -10,7 +11,7 @@ public class ShoppingCart {
 	// Constructor: Creates an initially empty collection.
 	// -----------------------------------------------------------------
 	public ShoppingCart() {
-		collection = new Item[100];
+		capacity = new Item[100];
 		count = 0;
 		totalCost = 0.0;
 	}
@@ -18,10 +19,10 @@ public class ShoppingCart {
 	// -----------------------------------------------------------------
 	// Adds a Item to the collection, increasing the size of the array if necessary.
 	// -----------------------------------------------------------------
-	public void addItem(String name, double price, int quantity) {
-		if (count == collection.length)
+	public void addToCart(String name, double price, int quantity) {
+		if (count == capacity.length)
 			increaseSize();
-		collection[count] = new Item(name,price,quantity);
+		capacity[count] = new Item(name,price,quantity);
 		totalCost += price;
 		count++;
 	}
@@ -38,7 +39,7 @@ public class ShoppingCart {
 		report += "Average cost: " + fmt.format(totalCost / count);
 		report += "\n\nItem List:\n\n";
 		for (int item = 0; item < count; item++)
-			report += collection[item].toString() + "\n";
+			report += capacity[item].toString() + "\n"; 
 		return report;
 	}
 
@@ -47,9 +48,9 @@ public class ShoppingCart {
 	// larger array and copying the existing collection into it.
 	// -----------------------------------------------------------------
 	private void increaseSize() {
-		Item[] temp = new Item[collection.length * 2];
-		for (int item = 0; item < collection.length; item++)
-			temp[item] = collection[item];
-		collection = temp;
+		Item[] temp = new Item[capacity.length + 3];
+		for (int item = 0; item < capacity.length; item++)
+			temp[item] = capacity[item];
+		capacity = temp;
 	}
 }
