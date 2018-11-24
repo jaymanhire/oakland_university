@@ -21,7 +21,8 @@ public class Shopping {
 		scan.nextInt();
 		
 		
-		items.addItem(name, price, quantity);
+		items.addToCart("Apple", 1.09, 4);
+		
 
 	
 

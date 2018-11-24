@@ -17,7 +17,7 @@ public class ShoppingCart {
 	}
 
 	// -----------------------------------------------------------------
-	// Adds a Item to the collection, increasing the size of the array if necessary.
+	// Adds a Item to the cart, increasing the size of the array if necessary.
 	// -----------------------------------------------------------------
 	public void addToCart(String name, double price, int quantity) {
 		if (count == capacity.length)
