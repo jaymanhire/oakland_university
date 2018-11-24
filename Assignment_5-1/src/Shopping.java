@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Shopping {
 
@@ -7,16 +8,22 @@ public class Shopping {
 	public static void main(String[] args) {
 
 		ShoppingCart items = new ShoppingCart();
-
-		movies.addItem("The Godfather", "Francis Ford Coppola", 1972, 24.95, true);
+		
+		System.out.println("Enter name of item: ");
+		Scanner scan  = new Scanner(System.in);
+		scan.hasNextLine();
+		
+		System.out.println("Enter item price: ");
+		scan.nextDouble();
+		
+		
+		System.out.println("Enter item quantity: ");
+		scan.nextInt();
+		
+		
 		items.addItem(name, price, quantity);
 
-		System.out.println(movies);
-
-		movies.addItem("Iron Man 2", "Jon Favreau", 2010, 22.99, false);
-		movies.addItem("Casablanca", "Michael Curtiz", 1942, 19.95, false);
-
-		 System.out.println(movies);
+	
 
 	}
 
