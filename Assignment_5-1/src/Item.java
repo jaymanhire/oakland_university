@@ -29,16 +29,19 @@ public class Item {
 
 	}
 
-	// Returns a string description item attributes
 	public String toString() {
-		String description = null;
-		double subtotal = 0;
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		double total = price * quantity;
+		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		report += "Item: ";
+		report += name + "\t";
+		report += "Price: " + fmt.format(price) + "\t";
+		report += "Number of items: " + quantity + "\n";
+		report += "Total: " + fmt.format(total) + "\n";
 
-		description += name + "\t" + quantity;
-		description = fmt.format(price) + "\t" + fmt.format(subtotal) + "\t";
-
-		return description;
+		// for (int item = 0; item < itemCount; item++)
+		// report += cart[item].toString() + "\n";
+		return report;
 	}
 
 }

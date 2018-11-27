@@ -6,7 +6,7 @@ public class Shopping {
 
 	public static void main(String[] args) {
 
-		ShoppingCart items = new ShoppingCart();
+		ShoppingCart items = new ShoppingCart();		
 
 		System.out.println("Enter name of item: ");
 		Scanner scan = new Scanner(System.in);
@@ -19,10 +19,13 @@ public class Shopping {
 		System.out.println("Enter item quantity: ");
 		int quantity = scan.nextInt();
 		
+		Item item = new Item(name, price, quantity);
+		
 		items.addToCart(name, price, quantity);
 
 		
-		 System.out.println(items);
+		System.out.println(item.toString());
+		
 
 		/*
 		 * for (int index = 0; index < items.length; index++) {
