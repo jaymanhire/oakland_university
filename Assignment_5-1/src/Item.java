@@ -1,5 +1,5 @@
 
-// Represents a DVD video disc
+// Represents a shopping cart
 
 import java.text.NumberFormat;
 
@@ -9,7 +9,6 @@ public class Item {
 	private int quantity = 0;
 
 	// Creates a new Item with the specified information
-
 	public Item(String name, double price, int quantity) {
 		this.name = name;
 		this.price = price;
@@ -31,7 +30,6 @@ public class Item {
 	}
 
 	// Returns a string description item attributes
-
 	public String toString() {
 		String description = null;
 		double subtotal = 0;
@@ -40,9 +38,6 @@ public class Item {
 		description += name + "\t" + quantity;
 		description = fmt.format(price) + "\t" + fmt.format(subtotal) + "\t";
 
-		/*
-		 * if (bluray) description += "\t" + "Blu-ray";
-		 */
 		return description;
 	}
 

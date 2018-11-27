@@ -2,29 +2,30 @@
 import java.text.NumberFormat;
 
 public class ShoppingCart {
-	
-	private Item[] capacity;
-	private int count;
-	private double totalCost;
+
+	private Item[] cart;
+	private int itemCount = 0;
+	private double totalPrice = 0;
+	private int capacity = 5;
 
 	// -----------------------------------------------------------------
-	// Constructor: Creates an initially empty collection.
+	// Constructor: Creates an initially empty cart.
 	// -----------------------------------------------------------------
 	public ShoppingCart() {
-		capacity = new Item[100];
-		count = 0;
-		totalCost = 0.0;
+		cart = new Item[capacity];
+		itemCount = 0;
+		totalPrice = 0.0;
 	}
 
 	// -----------------------------------------------------------------
 	// Adds a Item to the cart, increasing the size of the array if necessary.
 	// -----------------------------------------------------------------
 	public void addToCart(String name, double price, int quantity) {
-		if (count == capacity.length)
+		if (itemCount == cart.length)
 			increaseSize();
-		capacity[count] = new Item(name,price,quantity);
-		totalCost += price;
-		count++;
+		cart[itemCount] = new Item(name, price, quantity);
+		totalPrice += price;
+		itemCount++;
 	}
 
 	// -----------------------------------------------------------------
@@ -34,12 +35,12 @@ public class ShoppingCart {
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
 		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 		report += "Shopping Cart\n\n";
-		report += "Number of items: " + count + "\n";
-		report += "Total cost: " + fmt.format(totalCost) + "\n";
-		report += "Subtotal: " + fmt.format(totalCost * count);
+		report += "Number of items: " + itemCount + "\n";
+		report += "Total cost: " + fmt.format(totalPrice) + "\n";
+		report += "Subtotal: " + fmt.format(totalPrice * itemCount);
 		report += "\n\nItem List:\n\n";
-		for (int item = 0; item < count; item++)
-			report += capacity[item].toString() + "\n"; 
+		for (int item = 0; item < itemCount; item++)
+			report += cart[item].toString() + "\n";
 		return report;
 	}
 
@@ -48,9 +49,9 @@ public class ShoppingCart {
 	// larger array and copying the existing collection into it.
 	// -----------------------------------------------------------------
 	private void increaseSize() {
-		Item[] temp = new Item[capacity.length + 3];
-		for (int item = 0; item < capacity.length; item++)
-			temp[item] = capacity[item];
-		capacity = temp;
+		Item[] temp = new Item[cart.length + 3];
+		for (int item = 0; item < cart.length; item++)
+			temp[item] = cart[item];
+		cart = temp;
 	}
 }

@@ -5,7 +5,7 @@ public class ReverseOrder {
 
 		Scanner scan = new Scanner(System.in);
 
-		double[] numbers = new double[10];
+		double[] numbers = new double[4];
 
 		System.out.println("The size of the array: " + numbers.length);
 
