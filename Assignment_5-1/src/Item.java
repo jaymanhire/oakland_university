@@ -30,9 +30,10 @@ public class Item {
 	}
 
 	public String toString() {
-		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		NumberFormat fmt = NumberFormat.getCurrencyInstance();		
 		double subTotal = price * quantity;
 		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		report += "Shopping Cart:\n\n";
 		report += "Item: ";
 		report += name + "\t";
 		report += "Price: " + fmt.format(price) + "\t";

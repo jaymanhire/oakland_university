@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 
 public class ShoppingCart {
 
@@ -5,6 +6,7 @@ public class ShoppingCart {
 	private int itemCount = 0;
 	private double totalPrice = 0;
 	private int capacity = 5;
+	// private String name;
 	private String name;
 
 	// -----------------------------------------------------------------
@@ -14,6 +16,7 @@ public class ShoppingCart {
 		cart = new Item[capacity];
 		itemCount = 0;
 		totalPrice = 0.0;
+
 	}
 
 	// -----------------------------------------------------------------
@@ -30,17 +33,20 @@ public class ShoppingCart {
 	// -----------------------------------------------------------------
 	// Returns a report describing the Cart items.
 	// -----------------------------------------------------------------
-	/*
-	 * public String toString() { NumberFormat fmt =
-	 * NumberFormat.getCurrencyInstance(); String report =
-	 * "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"; report +=
-	 * "Shopping Cart:\n\n"; report += "Item: " + name + "\t"; report +=
-	 * "Number of items: " + itemCount + "\n"; report += "Total cost: " +
-	 * fmt.format(totalPrice) + "\n"; report += "Subtotal: " + fmt.format(totalPrice
-	 * * itemCount); report += "\n\nItem List:\n\n"; for (int item = 0; item <
-	 * itemCount; item++) report += cart[item].toString() + "\n"; return report; }
-	 */
-	
+
+	public String toString() {
+		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		report += "Shopping Cart:\n\n";
+		report += "Item: " + name + "\t";
+		report += "Number of items: " + itemCount + "\n";
+		report += "Total cost: " + fmt.format(totalPrice) + "\n";
+		report += "Subtotal: " + fmt.format(totalPrice * itemCount);
+		report += "\n\nItem List:\n\n";
+		for (int item = 0; item < itemCount; item++)
+			report += cart[item].toString() + "\n";
+		return report;
+	}
 
 	// Increases the capacity of the collection by creating a
 	// larger array and copying the existing collection into it.
