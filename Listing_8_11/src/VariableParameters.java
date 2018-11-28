@@ -7,7 +7,7 @@ public class VariableParameters {
 		// a variable number of String objects as parameters.
 		Family lewis = new Family("John", "Sharon", "Justin");
 
-		Family camden = new Family("Steve", "Annie", "Matt", "Mary");
+		Family camden = new Family("Steve", "Annie", "Matt", "Mary", "Billy", "Sue");
 
 		System.out.println(lewis);
 		System.out.println();

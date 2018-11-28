@@ -31,16 +31,14 @@ public class Item {
 
 	public String toString() {
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
-		double total = price * quantity;
+		double subTotal = price * quantity;
 		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 		report += "Item: ";
 		report += name + "\t";
 		report += "Price: " + fmt.format(price) + "\t";
 		report += "Number of items: " + quantity + "\n";
-		report += "Total: " + fmt.format(total) + "\n";
-
-		// for (int item = 0; item < itemCount; item++)
-		// report += cart[item].toString() + "\n";
+		report += "Total: " + fmt.format(subTotal) + "\n";
+		
 		return report;
 	}
 

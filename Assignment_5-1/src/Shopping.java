@@ -6,11 +6,10 @@ public class Shopping {
 
 	public static void main(String[] args) {
 
-		ShoppingCart items = new ShoppingCart();		
+		ShoppingCart items = new ShoppingCart();
 
 		System.out.println("Enter name of item: ");
 		Scanner scan = new Scanner(System.in);
-
 		String name = scan.nextLine();
 
 		System.out.println("Enter item price: ");
@@ -18,14 +17,16 @@ public class Shopping {
 
 		System.out.println("Enter item quantity: ");
 		int quantity = scan.nextInt();
-		
-		Item item = new Item(name, price, quantity);
-		
-		items.addToCart(name, price, quantity);
 
-		
-		System.out.println(item.toString());
-		
+		System.out.println("Enter 'y' if you would like to keep shopping or Enter 'n' to quit\n");
+
+		// Item item = new Item(name, price, quantity);
+		// System.out.println(item.getName());
+
+		items.addToCart(name, price, quantity);
+		System.out.println(items);
+
+		// System.out.println(item.toString());
 
 		/*
 		 * for (int index = 0; index < items.length; index++) {

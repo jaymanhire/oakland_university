@@ -1,6 +1,4 @@
 
-import java.text.NumberFormat;
-
 public class ShoppingCart {
 
 	private Item[] cart;
@@ -32,24 +30,20 @@ public class ShoppingCart {
 	// -----------------------------------------------------------------
 	// Returns a report describing the Cart items.
 	// -----------------------------------------------------------------
-	public String toString() {
-		NumberFormat fmt = NumberFormat.getCurrencyInstance();
-		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";		
-		report += "Shopping Cart:\n\n";
-		report += "Item: " + name + "\t";
-		report += "Number of items: " + itemCount + "\n";
-		report += "Total cost: " + fmt.format(totalPrice) + "\n";
-		report += "Subtotal: " + fmt.format(totalPrice * itemCount);
-		report += "\n\nItem List:\n\n";
-		for (int item = 0; item < itemCount; item++)
-			report += cart[item].toString() + "\n";
-		return report;
-	}
+	/*
+	 * public String toString() { NumberFormat fmt =
+	 * NumberFormat.getCurrencyInstance(); String report =
+	 * "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"; report +=
+	 * "Shopping Cart:\n\n"; report += "Item: " + name + "\t"; report +=
+	 * "Number of items: " + itemCount + "\n"; report += "Total cost: " +
+	 * fmt.format(totalPrice) + "\n"; report += "Subtotal: " + fmt.format(totalPrice
+	 * * itemCount); report += "\n\nItem List:\n\n"; for (int item = 0; item <
+	 * itemCount; item++) report += cart[item].toString() + "\n"; return report; }
+	 */
+	
 
-	// -----------------------------------------------------------------
 	// Increases the capacity of the collection by creating a
 	// larger array and copying the existing collection into it.
-	// -----------------------------------------------------------------
 	private void increaseSize() {
 		Item[] temp = new Item[cart.length + 3];
 		for (int item = 0; item < cart.length; item++)
