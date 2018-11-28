@@ -14,7 +14,6 @@ public class Labrador extends Dog {
 	public Labrador(String name, String color) {
 		super(name);
 		this.setColor(color);
-
 	}
 
 	// ------------------------------------------------------------
@@ -27,7 +26,7 @@ public class Labrador extends Dog {
 	// ------------------------------------------------------------
 	// Returns weight
 	// ------------------------------------------------------------
-	public static int avgBreedWeight() {
+	public int avgBreedWeight() {
 		return breedWeight;
 	}
 

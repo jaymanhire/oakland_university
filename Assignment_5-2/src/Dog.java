@@ -1,5 +1,5 @@
 
-public class Dog {
+public abstract class Dog {
 
 	protected String name;
 
@@ -23,4 +23,7 @@ public class Dog {
 	public String speak() {
 		return "Woof";
 	}
+	public abstract int avgBreedWeight();
+		
+	
 }
