@@ -5,15 +5,22 @@ import java.text.NumberFormat;
 
 public class Item {
 	private String name;
-	private double price;
+	private double price = 0;
 	private int quantity = 0;
 
 	// Creates a new Item with the specified information
 	public Item(String name, double price, int quantity) {
 		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
-
+		if (quantity > 0) {
+			this.quantity = quantity;
+		} else {
+			this.quantity = 0;
+		}
+		if (price > 0) {
+			this.price = price;
+		} else {
+			this.price = 0;
+		}
 	}
 
 	public String getName() {
@@ -26,20 +33,12 @@ public class Item {
 
 	public int getQuantity() {
 		return this.quantity;
-
 	}
 
 	public String toString() {
-		NumberFormat fmt = NumberFormat.getCurrencyInstance();		
-		double subTotal = price * quantity;
-		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-		report += "Shopping Cart:\n\n";
-		report += "Item: ";
-		report += name + "\t";
-		report += "Price: " + fmt.format(price) + "\t";
-		report += "Number of items: " + quantity + "\n";
-		report += "Total: " + fmt.format(subTotal) + "\n";
 		
+		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		String report = name + "\t" + fmt.format(price) + "\t\t" + quantity + "\t\t" + fmt.format(quantity * price);
 		return report;
 	}
 

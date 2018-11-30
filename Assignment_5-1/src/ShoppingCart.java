@@ -2,12 +2,13 @@ import java.text.NumberFormat;
 
 public class ShoppingCart {
 
+	NumberFormat fmt = NumberFormat.getCurrencyInstance();
 	private Item[] cart;
 	private int itemCount = 0;
 	private double totalPrice = 0;
 	private int capacity = 5;
-	// private String name;
-	private String name;
+	private int totalItems;
+	//private String name;
 
 	// -----------------------------------------------------------------
 	// Constructor: Creates an initially empty cart.
@@ -16,18 +17,21 @@ public class ShoppingCart {
 		cart = new Item[capacity];
 		itemCount = 0;
 		totalPrice = 0.0;
+		totalItems = 0;
 
 	}
 
 	// -----------------------------------------------------------------
 	// Adds a Item to the cart, increasing the size of the array if necessary.
 	// -----------------------------------------------------------------
-	public void addToCart(String name, double price, int quantity) {
+	public void addToCart(Item newItem) {
 		if (itemCount == cart.length)
 			increaseSize();
-		cart[itemCount] = new Item(name, price, quantity);
-		totalPrice += price;
-		itemCount++;
+		totalItems++;
+		itemCount += newItem.getQuantity();		
+		totalPrice += (newItem.getQuantity()) * (newItem.getPrice());
+		cart[totalItems - 1] = newItem;
+		// itemCount++;
 	}
 
 	// -----------------------------------------------------------------
@@ -35,16 +39,15 @@ public class ShoppingCart {
 	// -----------------------------------------------------------------
 
 	public String toString() {
-		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		
 		String report = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 		report += "Shopping Cart:\n\n";
-		report += "Item: " + name + "\t";
-		report += "Number of items: " + itemCount + "\n";
-		report += "Total cost: " + fmt.format(totalPrice) + "\n";
-		report += "Subtotal: " + fmt.format(totalPrice * itemCount);
-		report += "\n\nItem List:\n\n";
-		for (int item = 0; item < itemCount; item++)
+		report += "Item \tItem Price\tQuantity\tTotal\n";
+		
+		for (int item = 0; item < totalItems; item++) {
 			report += cart[item].toString() + "\n";
+		}
+		report += "Total Price: " + fmt.format(totalPrice);
 		return report;
 	}
 
@@ -56,4 +59,11 @@ public class ShoppingCart {
 			temp[item] = cart[item];
 		cart = temp;
 	}
+
+	public String quit() {
+		String report2 = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+		report2 += "Thank you, Please pay: " + fmt.format(totalPrice);
+		return report2;
+	}
+
 }
