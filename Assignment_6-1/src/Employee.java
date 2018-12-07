@@ -8,7 +8,7 @@ public class Employee extends StaffMember {
 	// Constructor: Sets up this employee with the specified
 	// information.
 	// -----------------------------------------------------------------
-	public Employee(String eName, String eAddress, String ePhone, String socSecNumber, double rate, double commissionRate) {
+	public Employee(String eName, String eAddress, String ePhone, String socSecNumber, double rate) {
 		super(eName, eAddress, ePhone);
 		socialSecurityNumber = socSecNumber;
 		payRate = rate;
