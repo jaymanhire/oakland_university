@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Factorials {
 
-	public static void main(String[] args) throws OutOfRangeException {
+	public static void main(String[] args) {
 
 		String keepGoing = "y";
 
