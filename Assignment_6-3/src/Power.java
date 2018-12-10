@@ -22,13 +22,14 @@ public class Power {
 
 	public double power(double base, double exp) {
 
-		double result;
+		double result = 0;
 		if (exp == 0) {
 			result = 1;
 		} else
-			result = power(exp - 1, base - 1);
-		result = Math.pow(base, exp);		
-
+			for (int i = 0; i < exp; i++) {
+				result = Math.pow(base, i);
+				System.out.println(base + "^" + i + " = " + result);
+			}
 		return result;
 
 	}
