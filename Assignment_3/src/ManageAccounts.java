@@ -21,17 +21,6 @@ public class ManageAccounts {
 		System.out.println(fmt2.format(account1.getBalance()));
 		
 		System.out.println(account1.toString());
-		System.out.println(account2.toString());
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(account2.toString());		
 	}
-
 }
